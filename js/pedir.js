@@ -16,10 +16,17 @@ function pedirMusica(busqueda){
     $.ajax({
         type: "GET",
         url: armarURL,
-        headers: {"Authorization":"Bearer BQAUXeuGp6L4rYqf2oVnAUX5K7na7gR7W1mFSUFGj_6byvBt52o1LUmgAqVZCgq-2MKcvPiN7RQqadYq0IlIrI0A6SKK3ETLQW0XGRlNuXuVjYkTEEc"},
+        headers: {"Authorization":"Bearer BQA0DQHwWSEuYonfgeyG8Q4b3T0Axwx1a_Q-baLa3-N-1Lz_8egKbQ4XhXn2KsmkCoAdsXnQ4PnPvq90UIWbvri_rsgFJ8i_ADEJY5YlSWq2gjXxK8A"},
         success: function (response) {
             cargarCanciones(response)
+        },
+        statusCode :{
+            401 : function(){
+                console.log("RENOVANDO TOKEN")
+            }
         }
+        
+
     });
 }
 function cargarCanciones(canciones){
@@ -80,7 +87,7 @@ function cargarCanciones(canciones){
             $("#canciones").append(`
                 <div class="card">
                     <div class="card__header">
-                        <img src="${element.album.images[0].url}" alt="card__image" class="card__image" width="600">
+                        <img src="${element.album.images[0].url}" alt="card__image" class="card__image" >
                     </div>
                     <div class="card__body">
                         <span class="tag tag-blue">${element.type}</span>

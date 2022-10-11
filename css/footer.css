@@ -1,0 +1,23 @@
+
+
+@media media and (max-width) {
+    .footer{
+        background-color: rebeccapurple;
+        padding: 1em 0;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        border: 2px solid black;
+        width: 100vw;
+    }
+    
+}
+.footer{
+    background-color: rebeccapurple;
+    padding: 1em 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    border: 2px solid black;
+    width: 100vw;
+}
