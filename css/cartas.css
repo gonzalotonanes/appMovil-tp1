@@ -22,6 +22,36 @@ body {
   margin-left: 2.5rem;
   font-size: 2rem;
 }
+.boton-verMas{
+  background-color: #e7e7e7;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.boton-comprar{
+  background-color: #e7e7e7;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.boton-carrito{
+  background-color: #e7e7e7;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
 @media  screen and (max-width:480px) {
  
@@ -222,3 +252,4 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 .user__info > small {
   color: #666;
 }
+

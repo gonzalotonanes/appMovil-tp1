@@ -15,21 +15,27 @@
 <body>
 
     <header class="header">
-        <div class="logo">
-            <img class="logo-img" src="./img/spotify.png" alt="Logo">
+        <nav class="navbar">
+            <img class="logo-img" src="./img/spotify.png" alt="">
             <h1 class="main-title">Spotify Music</h1>
-        </div>
-    </header>
-
-    <main class="main-content">
-    <section class="principal">
-        <article class="buscador" id="buscador">
             <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Name" name="name" id="busqueda" required />
                 <label for="name" class="form__label">Busca tu cancion, artista o album favorito</label>
             </div>
             <button id="buscar" class="boton-input" type="button">BUSCAR</button>
-        </article>
+            <ul class="nav-links">
+                <div class="menu">
+                    <li><a href="https://techbit.in/">Home</a></li>
+                    <li><a href="https://techbit.in/aboutus/">About</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+    <section class="principal">
+        
         <article id="album">
             <h1>Albumes</h1>
             <div id="albumes" class="container"></div>
