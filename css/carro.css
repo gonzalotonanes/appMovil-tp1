@@ -1,0 +1,28 @@
+.container-carro{
+    margin: 0;
+    padding: 0;
+}
+
+.titulo-contenedor{
+    display: flex;        
+    justify-content: center;
+}
+.titulo-Compras{
+    background-color: #f0f0f0;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.productos-compras{
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+

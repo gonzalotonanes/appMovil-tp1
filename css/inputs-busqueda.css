@@ -5,15 +5,19 @@
 .form__group {
     position: relative;
     padding: 15px 0 0;
-    margin-top: 10px;
-    width: 50%;
+    width: 70%;
+    margin-right: 1rem;
     border-radius: 0.3rem;
     background-color: white;
 }
-
+@media (max-width:478px) {
+    .form__field{
+        height: 90px;
+    }
+}
 .form__field {
     font-family: inherit;
-    width: 100%;
+    width: 90%;
     border: 0;
     border-bottom: 2px solid #9b9b9b;
     outline: 0;
@@ -71,5 +75,6 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-top: 0.5rem;
+    border-radius: 0.2rem;
   }
+

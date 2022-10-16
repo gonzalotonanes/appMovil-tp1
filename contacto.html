@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/contacto.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Contacto</title>
+</head>
+
+<body>
+      <header class="header">
+        <nav class="navbar">
+            <img class="logo-img" src="./img/spotify.png" alt="">
+            <h1 class="main-title">Spotify Music</h1>
+                <div class="menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <!-- <button onclick="findMe()">Mostrar ubicación</button> -->
+
+        <div class="info">
+            <h5>Information</h5>
+            <hr>
+            <span>
+                <i class="fa fa-home"></i>
+                Dirección
+            </span>
+            <p>Calle 14</p>
+            <p>Ciudad de La Plata</p>
+            <p>Tel:
+                <a href="call:0115555.5555">(54 11) 5555.5555</a>
+            </p>
+            <p>Whatsapp:
+                <a href="https://api.whatsapp.com/send?phone=5491155555555" title="¡Hablamos por whatsapp!">(+54 911
+                    5555.5555)</a>
+            </p>
+            <p>
+                <span>
+                    <i>
+                        Atención al cliente
+                    </i>
+                </span>
+            </p>
+            <p>
+                <a href="mailto:spotify@spotify.com">spotify@spotify.com</a>
+            </p>
+            <p>
+                <i>
+                    Consultas por reembolso
+                </i>
+            </p>
+            <p>
+                <a href="mailto:spotify@spotify.com">spotify@spotify.com</a>
+            </p>
+            <p>
+                <span>
+                    <i>
+                        Atención
+                    </i>
+                </span>
+            </p>
+            <p>Lunes a viernes de 9:00 a 20:00hs</p>
+            <p>Sábado de 9:00 a 15:00hs</p>
+        </div>
+        <div class="info">
+            <div>
+                <form action="">
+                    <div class="form-div">
+                        <input type="text" placeholder="Nombre" class="form-input">
+                    </div>
+                    <div class="form-div">
+                        <input type="email" placeholder="Email" class="form-input">
+                    </div>
+                    <textarea class="text-area" maxlength="150" placeholder="Comentarios"></textarea>
+                </form>
+                <button class="btn-enviar-comentarios">Enviar</button>
+            </div>
+            <div id="map">
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <span class="copyright">&copy;2022, Aplicaciones moviles UNAJ, All rights reserved.</span>
+    </footer>
+
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+
+    <script>
+        let myMap = L.map('map').setView([-34.922817, -57.956272], 13)
+        L.tileLayer(`https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png`, {
+            maxZoom: 18,
+        }).addTo(myMap);
+        let marker = L.marker([51.5, -0.09]).addTo(myMap)
+        let iconMarker = L.icon({
+            iconUrl: './img/marker.png',
+            iconSize: [60, 60],
+            iconAnchor: [30, 60],
+        })
+        let marker2 = L.marker([-34.922817, -57.956272], { icon: iconMarker }).addTo(myMap).bindTooltip("Spotify Shop", { permanent: true, direction: 'top', offset: L.point(0, -65) })
+    </script>
+    <script src="map.js"></script>
+</body>
+</html>

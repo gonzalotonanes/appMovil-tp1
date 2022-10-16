@@ -4,33 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spotify</title>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="./js/pedir.js"></script>
+    
     <link rel="stylesheet" href="./css/cartas.css">
     <link rel="stylesheet" href="./css/inputs-busqueda.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/botones.css">
 </head>
 <body>
-    <section class="principal">
-        <article class="buscador" id="buscador">
+
+    <header class="header">
+        <nav class="navbar">
+            <img class="logo-img" src="./img/spotify.png" alt="">
+            <h1 class="main-title">Spotify Music</h1>
             <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Name" name="name" id="busqueda" required />
                 <label for="name" class="form__label">Busca tu cancion, artista o album favorito</label>
             </div>
             <button id="buscar" class="boton-input" type="button">BUSCAR</button>
+            <ul class="nav-links">
+                <div class="menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+    <section class="principal">
+        <article id="lanzamiento">
+            <h1>Nuevos lanzamientos</h1>
+            <div id="lanzamientos" class="container"></div>
+            <div class="botones" id="btn-lanzamientos"></div>
         </article>
+        
         <article id="album">
             <h1>Albumes</h1>
             <div id="albumes" class="container"></div>
+            <div class="botones" id="btn-albumes"></div>
         </article>
         <article id="artista" >
             <h1>Artistas</h1>
             <div id="artistas" class="container"></div>
+            <div class="botones" id="btn-artista" ></div>
         </article>
         <article id="cancion" >
             <h1>Canciones</h1>
             <div id="canciones" class="container"></div>
+            <div class="botones" id="btn-canciones"></div>
         </article>
     </section>
+</main>
+
+<footer class="footer">
+    <span class="copyright">&copy;2022, Aplicaciones moviles UNAJ, All rights reserved.</span>
+</footer>
+
+<script src="./js/pedir.js"></script>
 </body>
 </html>
