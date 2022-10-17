@@ -16,7 +16,7 @@
     background-color: rebeccapurple;
     padding: 1em 0;
     text-align: center;
-    position: absolute;
+    position: sticky;
     bottom: 0;
     border: 2px solid black;
     width: 100%;

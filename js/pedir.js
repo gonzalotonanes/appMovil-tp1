@@ -51,7 +51,7 @@ function cargarLanzamientos(res) {
     let albums = res.albums.items;
     albums.forEach(element => {
         $("#lanzamientos").append(`
-                <div class="card">
+                <div class="card"><a href="./info.html?id=${element.id}&imagen=${element.images[0].url}" >
                     <div class="card__header">
                         <img src="${element.images[0].url}" alt="card__image" class="card__image" width="600">
                     </div>
@@ -62,7 +62,7 @@ function cargarLanzamientos(res) {
                         <p>Cantidad de canciones: ${element.total_tracks}</p>
                         <p>Grupo musical: ${element.artists[0].name}</p>
                     </div>
-        
+                    </a>
                 </div>
             `);
     });
