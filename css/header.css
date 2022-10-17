@@ -6,8 +6,8 @@
 .logo-img {
     filter: brightness(1.1);
     mix-blend-mode: multiply;
-    width: 15%;
-    height: 25%;
+    width: 25%;
+    height: 30%;
     margin: 0;
 }
 
@@ -33,6 +33,13 @@ li {
     list-style: none;
 }
 
+.logo_titulo{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -54,7 +61,7 @@ li {
 }
 
 .menu li:hover {
-    background-color: rgb(59, 59, 59);
+    background-color: #4CAF50;
     font-weight: bold;
 }
 
@@ -108,15 +115,83 @@ input[type=checkbox] {
 }
 
 /* APPLYING MEDIA QUERIES */
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
     .menu {
-        display: none;
-        position: absolute;
-        background-color: rgb(0, 0, 0);
+        position: relative;
+        background-color: #f0f0f0;
         right: 0;
         left: 0;
         text-align: center;
         padding: 16px 0;
+        display: block;
+    }
+
+    .menu li:hover {
+        display: inline-block;
+        background-color: #f0f0f0;
+        transition: 0.3s ease;
+    }
+
+
+    input[type=checkbox]:checked~.menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown {
+        left: 50%;
+        top: 30px;
+        transform: translateX(35%);
+    }
+
+    .dropdown li:hover {
+        background-color: rgb(59, 59, 59);
+    }
+    .navbar{
+        display: block;
+        background-color: #f0f0f0;
+        color: #0f0f0f;
+    }
+    .logo_titulo{
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+    }
+    .boton-input{
+        display: block;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 480px){
+    .navbar{
+        display: block;
+        background-color: #f0f0f0;
+        color: #0f0f0f;
+    }
+    .logo_titulo{
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .boton-input{
+        display: block;
+        margin: 0 auto;
+    }
+    .menu {
+        position: relative;
+        background-color: #f0f0f0;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+        display: block;
+        margin: 0 auto;
     }
 
     .menu li:hover {
@@ -146,4 +221,5 @@ input[type=checkbox] {
     .dropdown li:hover {
         background-color: rgb(59, 59, 59);
     }
+
 }

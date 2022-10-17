@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/cartas.css">
+    <link rel="stylesheet" href="./css/inputs-busqueda.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/botones.css">
+    <link rel="stylesheet" href="./css/info.css">
+    <link rel="stylesheet" href="./css/index.css">
+    
+</head>
+<title>Info</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <img class="logo-img" src="./img/spotify.png" alt="">
+            <h1 class="main-title">Spotify Music</h1>
+            <ul class="nav-links">
+                <div class="menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+        <div class="principal">
+            <article id="album" class="album">
+                <h1>Nuevos lanzamientos</h1>
+                <div id="album-img" class="imagen-album"></div>
+                <div class="canciones">
+                    <ul id="listado" class="lista-canciones">
+
+                    </ul>
+               </div>
+            </article>
+
+                </div>
+    </main>
+
+    <footer class="footer">
+        <span class="copyright">&copy;2022, Aplicaciones moviles UNAJ, All rights reserved.</span>
+    </footer>   
+
+</body>
+
+<script>
+    console.log("estoy en info");
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const id = urlSearchParams.get("id");
+    const imagen = urlSearchParams.get("imagen");
+    console.log("El id es:", id);
+    console.log("imagen url:", imagen);
+
+    let token = localStorage.getItem('token');
+    const username = "ff36890297234638a942900dd76cf68f";
+    const password = "f08e1f503aaa43b99a98b010ce9a62f3"
+
+    if (id == null) {
+        window.location.href = "index.html"
+    }
+
+    $("#album-img").append(`
+    <img src="${imagen}" class="img-info"alt="">
+    `);
+
+
+    let url = `https://api.spotify.com/v1/albums/${id}/tracks`;
+
+
+    getInfoAlbum(url);
+
+    function getInfoAlbum(url) {
+
+        $.ajax({
+            type: "GET",
+            url: url,
+            headers: { "Authorization": "Bearer " + token },
+            success: function (response) {
+                cargarInfoAlbum(response);
+            },
+            statusCode: {
+                401: function () {
+                    console.log("RENOVANDO TOKEN")
+                    renovarToken();
+                    getInfoAlbum(url);
+                }
+            }
+        });
+
+        function renovarToken() {
+            $.ajax(
+                {
+                    method: "POST",
+                    url: "https://accounts.spotify.com/api/token",
+                    data: {
+                        "grant_type": "client_credentials",
+                        "client_secret": password,
+                        "client_id": username,
+                    },
+                    success: function (result) {
+                        token = result.access_token;
+                        localStorage.setItem("token", token)
+                    },
+                }
+            );
+        }
+
+
+        function cargarInfoAlbum(res) {    
+            let albums = res.items;
+            let i=1;
+            albums.forEach(element => {
+                $("#listado").append(`
+                <a href="${element.external_urls.spotify}" ><li>${i}. ${element.name}</li></a>
+            `);
+            i++;
+            });
+        }
+    }
+
+   
+
+</script>
+
+</html>

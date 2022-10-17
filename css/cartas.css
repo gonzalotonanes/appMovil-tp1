@@ -54,17 +54,10 @@ body {
 }
 
 @media  screen and (max-width:480px) {
- 
-  body{
-    background: red;
-  }
 
   .main-content{
     min-width: 480px;
   }
-  
-  
-
   
   .container {
     display: flex;
@@ -169,9 +162,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1200px;
   margin-block: 2rem;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 img {
@@ -252,4 +244,3 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 .user__info > small {
   color: #666;
 }
-

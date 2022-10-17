@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+.botones {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 2em auto 2em;
+    color: green;
+  }
+  .ir-arriba {
+    display:none;
+    padding:20px;
+    background:#024959;
+    font-size:20px;
+    color:#fff;
+    cursor:pointer;
+    position: fixed;
+    bottom:20px;
+    right:20px;
+    z-index: 999;
+  }

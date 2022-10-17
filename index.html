@@ -11,13 +11,18 @@
     <link rel="stylesheet" href="./css/inputs-busqueda.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/botones.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href="./img/spotify.png">
 </head>
 <body>
 
     <header class="header">
         <nav class="navbar">
-            <img class="logo-img" src="./img/spotify.png" alt="">
-            <h1 class="main-title">Spotify Music</h1>
+            <div class="logo_titulo">
+                <img class="logo-img" src="./img/spotify.png" alt="">
+                <h1 class="main-title">Spotify Music</h1>
+            </div>
             <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Name" name="name" id="busqueda" required />
                 <label for="name" class="form__label">Busca tu cancion, artista o album favorito</label>
@@ -25,8 +30,8 @@
             <button id="buscar" class="boton-input" type="button">BUSCAR</button>
             <ul class="nav-links">
                 <div class="menu">
-                    <li><a href="https://techbit.in/">Home</a></li>
-                    <li><a href="https://techbit.in/aboutus/">About</a></li>
+                    <li><a href="./index.html">INICIO</a></li>
+                    <li><a href="./contacto.html">CONTACTO</a></li>
                 </div>
             </ul>
         </nav>
@@ -35,18 +40,25 @@
     <main class="main-content">
 
     <section class="principal">
-        
-        <article id="album">
-            <h1>Albumes</h1>
-            <div id="albumes" class="container"></div>
+        <article id="lanzamiento">
+            <h1>Nuevos lanzamientos</h1>
+            <div id="lanzamientos" class="container"></div>
+            <div class="botones" id="btn-lanzamientos"></div>
         </article>
-        <article id="artista" >
-            <h1>Artistas</h1>
-            <div id="artistas" class="container"></div>
+        <article id="albumes">
+            <h1 class="albumes_ver">Albumes</h1>
+            <div id="album" class="container"></div>
+            <div class="botones" id="btn-albumes"></div>
         </article>
-        <article id="cancion" >
-            <h1>Canciones</h1>
-            <div id="canciones" class="container"></div>
+        <article id="artistas">
+            <h1 class="artistas_ver">Artistas</h1>
+            <div id="artist" class="container"></div>
+            <div class="botones" id="btn-artista" ></div>
+        </article>
+        <article id="canciones">
+            <h1 class="cancion_ver">Canciones</h1>
+            <div id="cancion" class="container"></div>
+            <div class="botones" id="btn-canciones"></div>
         </article>
     </section>
 </main>
