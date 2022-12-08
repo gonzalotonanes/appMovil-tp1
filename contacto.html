@@ -95,7 +95,6 @@
         </div>
     </main>
 
-
     <footer class="footer">
         <span class="copyright">&copy;2022, Aplicaciones moviles UNAJ, All rights reserved.</span>
     </footer>
@@ -104,7 +103,7 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
         integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
         crossorigin=""></script>
-
+    <script src="./js/contacto.js"></script>
     <script>
         let myMap = L.map('map').setView([-34.922817, -57.956272], 13)
         L.tileLayer(`https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png`, {
@@ -117,7 +116,8 @@
             iconAnchor: [30, 60],
         })
         let marker2 = L.marker([-34.922817, -57.956272], { icon: iconMarker }).addTo(myMap).bindTooltip("Spotify Shop", { permanent: true, direction: 'top', offset: L.point(0, -65) })
+
     </script>
-    <script src="map.js"></script>
+    
 </body>
 </html>

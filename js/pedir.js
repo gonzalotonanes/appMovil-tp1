@@ -160,7 +160,7 @@ function cargarAlbunes(res) {
                     localStorage.setItem("Producto", cJson);
                 }
 
-                window.location.replace("/carrito.html");
+                window.location.replace("./carrito.html");
 
             });
             $(`#${element.id}-carro`).click(function (e) { 
